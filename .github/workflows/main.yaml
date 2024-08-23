@@ -7,6 +7,7 @@ permissions:
  
 jobs:
   build:
+ 
     runs-on: ubuntu-latest
  
     steps:
@@ -30,7 +31,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
  
     - name: Run UDM field check
-      run: python3 ./.github/scripts/check_udm_fields.py  # Run the script directly
+      uses: ./.github/actions/check_udm_fields.py  # Use the custom action
  
     - name: Test with pytest
       run: |
