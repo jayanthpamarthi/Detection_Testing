@@ -31,7 +31,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
  
     - name: Run UDM field check
-      uses: ./.github/actions/check_udm_fields.py  # Use the custom action
+      uses: ./.github/check_udm_fields.py  # Use the custom action
  
     - name: Test with pytest
       run: |
