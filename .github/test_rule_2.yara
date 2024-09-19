@@ -25,8 +25,7 @@ rule user_added_to_privileged_groups
   events:
         (($e.metadata.event_type = "GROUP_MODIFICATION" and
         $e.metadata.description = /added|add/ nocase )
-   (($e.metadata.event_type = "GROUP_MODIFICATION" and
-        $e.metadata.description = /added|add/ nocase )
+   
         $e.principal.user.userid != ""
    condition:
        $e
